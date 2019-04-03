@@ -1,0 +1,430 @@
+// 定义微金所官方的主体色变量
+@main-color: #e92322;
+
+// bootstrap把所有a变成蓝色 需要覆盖 而且下划线使用 hover为了 focus伪类添加 使用对应伪类覆盖
+a {
+    color: #666;
+
+    &:hover {
+        color: #666;
+        text-decoration: none;
+    }
+
+    &:focus {
+        color: #666;
+        text-decoration: none;
+    }
+}
+
+
+/* 头部样式 */
+#header {
+    border-bottom: 1px solid #ccc;
+
+    // 父元素不要写死高度 做响应式布局 高度不固定的 
+    .container {
+        .row {
+
+            // 表示是行的儿子div 一定是列
+            >div {
+                line-height: 40px;
+                font-size: 12px;
+
+                // 相邻的后面的div
+                &~div {
+                    border-left: 1px solid #ccc;
+                }
+
+                .btn-link {
+                    color: #666;
+                }
+
+                .mobile-link {
+                    display: block;
+                    position: relative;
+
+                    img {
+                        // 图标不能占位置
+                        position: absolute;
+                        // 设置定位元素水平居中
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 40px;
+                        display: none;
+                        z-index: 999;
+                    }
+
+                    // 鼠标上移显示图片
+                    &:hover {
+                        img {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 导航条区域 */
+#nav {
+    background-color: #fff;
+    // 去掉导航条底部默认间距
+    margin-bottom: 0;
+    top: 0;
+    width: 100%;
+    z-index: 998;
+    opacity: 0.8;
+    .container {
+
+        // 导航条的头部
+        .navbar-header {
+
+            // 导航条的折叠按钮
+            .navbar-toggle {
+                // 80 - 34 == 46 / 2 == 23
+                margin-top: 23px;
+            }
+
+            // 品牌logo
+            .navbar-brand {
+                line-height: 50px;
+                // 因为bootstrap固定为50px 覆盖变成
+                height: 80px;
+                // 注意不要a设置字体大小里面回车换行 有大小  有间距 造成个人中心掉下来
+                // font-size: 30px;
+                .icon-icon {
+                    font-size: 30px;
+                    color:@main-color;
+                
+                }
+                .icon-logo {
+                    font-size: 28px;
+                    color: #333;
+                }
+            }
+        }
+
+        // 导航条的身体
+        .navbar-collapse {
+
+            // 导航条链接的容器
+            .navbar-nav {
+
+                // 每个链接
+                li {
+                    a {
+                        // a本身上下有 15px的padding把自己变大 需要80高度 行高只能写50px
+                        line-height: 50px;
+
+                        &:hover {
+                            border-bottom: 2px solid @main-color;
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            background-color: #fff;
+                            border-bottom: 2px solid @main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 轮播图区域的样式 */
+#slide {
+    .small-image {
+        /* 使用图片标签设置宽度 高度自己缩放导致图片变小 */
+        width: 100%;
+    }
+
+    /* 大图样式 */
+    .large-image {
+        /* 放大图的div容器 */
+        width: 100%;
+        height: 410px;
+        /* 使用背景图方式插入大图 */
+
+        /* 设置背景图居中 */
+        background-position: center center;
+    }
+}
+
+/* 特色介绍区域 */
+#feature {
+    padding: 40px 0;
+
+    .container {
+        .row {
+
+            // 子代列
+            >div {
+
+                // 媒体对象容器
+                .media {
+                    // 兄弟设置margin
+                    margin-bottom: 10px;
+
+                    a {
+                        &:hover {
+                            color: @main-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 立即预约样式 */
+#booking {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    // 文字有多行不推荐使用行高  使用padding
+    // line-height: 60px;
+    padding: 20px 0;
+    
+    // 修改了默认红色类名的 红色颜色
+    .text-danger {
+        color: @main-color;
+    }
+}
+
+/* 商品区域的样式 */
+#products{
+    background-color: #f5f5f5;
+    padding: 40px 0;
+    .container{
+        .swiper-container{
+            width: 100%;
+            .swiper-slide{
+                width: auto;
+                ul{
+                    width: auto;
+                }
+            }
+        }
+        // 标签页标题样式
+        .nav-tabs{
+            li{
+                a{
+                    font-size: 18px;
+                    height: 48px;
+                    &:hover{
+                        background-color: transparent;
+                        border:1px solid transparent;
+                    }
+                }
+                &.active{
+                    a{
+                        background-color: #f5f5f5;
+                        border:1px solid transparent;
+                        border-bottom: 2px solid @main-color;
+                    }
+                }
+            }
+        }
+        // 标签页内容样式
+        .tab-content{
+            .tab-pane{
+                >.row{
+                    > div{
+                        // 商品盒子
+                        .product{
+                            margin-top: 20px;
+                            background-color: #fff;
+                            display: flex;
+                            // 给单独的active盒子设置红色背景色白色字体颜色
+                            &.active{
+                                background-color: @main-color;
+                                color:#fff;
+                                position: relative;
+                                // 给单独设置伪元素添加图标
+                                &::before{
+                                    // 直接使用编码和字体也可以使用图标
+                                    content:"\e915";
+                                    font-family: 'itcast';
+                                    font-size: 30px;
+                                    position: absolute;
+                                    left: 0;
+                                    top: -6px;
+                                }
+                            }
+                            // 商品的左边宽度自适应 flex:1 高度固定160px
+                            .left{
+                                flex:1;
+                                padding: 15px;
+                                height: 160px;
+                                h4{
+                                    text-align: center;
+                                }
+                                .row{
+                                    div{
+                                        margin-bottom: 10px;
+                                        p{
+                                            margin-bottom: 0;
+                                        }
+                                        &:nth-child(2n){
+                                            text-align: right;
+                                        }
+                                    }                                    
+                                }
+                            }
+                            // 商品的右边固定宽度高度
+                            .right{
+                                width: 100px;
+                                height: 160px;
+                                border:1px dashed #ccc;
+                                // padding: 45px 0;
+                                // 设置右边的多行文字居中 使用flex的主轴 垂直 主轴居中方式
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                position: relative;
+                                p{
+                                    text-align: center;
+                                   
+                                    strong{
+                                        font-size: 30px;
+                                    }
+                                }
+                                // 两个小圆使用伪元素方式添加 公共样式使用并集选择器
+                                &::before,&::after{
+                                    content:'';
+                                    position: absolute;
+                                    width: 16px;
+                                    height: 16px;
+                                    border-radius: 50%;
+                                    left: -8px;
+                                    background-color: #f5f5f5;
+                                }
+                                &::before{
+                                    top: -8px;
+                                }
+                                &::after{
+                                    bottom: -8px;
+                                }
+                                /* 工具提示的样式 */
+                                .tooltips{
+                                    // 给按钮的元素设置定位
+                                    position: absolute;
+                                    top: 10px;
+                                    // 父元素定位了导致没有宽度设置宽度100% 不然提示位置跑偏 
+                                    width: 100%;
+                                    text-align: center;
+                                    button{
+                                        &:first-child{
+                                            color:@main-color;
+                                            border:1px solid @main-color;
+                                            background-color: #fff;
+                                        }
+                                        // 选中最后一个当前按钮类型的元素排除别的元素
+                                        // 因为插件动态添加一个元素导致按钮不是最后一个
+                                        &:last-of-type{
+                                            color:sandybrown;
+                                            border:1px solid sandybrown;
+                                            background-color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 新闻区域样式 */
+#news{
+    padding: 40px 0;
+    .row{
+        > div{
+            // 新闻标题样式
+            h4{
+                line-height: 40px;
+                text-align: center;
+                border-bottom: 1px dashed #ccc;
+                position: relative;
+                &::after{
+                    content:'';
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    border:1px solid #ccc;
+                    right: -10px;
+                    bottom: -5px;
+                }
+            }
+            // 标签页标题 菜单
+            .nav-tabs{
+                border-bottom: 0;
+                // 只要小和超小屏幕需要改
+                @media(max-width:992px){
+                    li{
+                        width: 25%;
+                        // 因为a是块级元素使用块级元素居中方式
+                        display: flex;
+                        justify-content: center;
+                        a{
+                            width: 60px;
+                            // 使用margin:0 auto块级元素让a居中
+                            margin: 0px auto;
+                        }
+                    }
+                }
+                li{
+                    a{
+                        border-radius: 50%;
+                        border:0;
+                        margin-bottom: 10px;
+                        color:#ccc;
+                        i{
+                            font-size: 30px;
+                        }
+                        &:hover{
+                            background-color: @main-color;
+                        }
+                    }
+                    &.active{
+                        a{
+                            background-color: @main-color;
+                        }
+                    }
+                }
+            }
+            // 标签页的内容
+            .tab-content{
+                ul{
+                    padding-left: 30px;
+                    li{
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 底部合作伙伴样式 */
+#footer{
+    .row{
+        div{
+            a{
+                display: block;
+                i{
+                    font-size: 60px;
+                }
+                &:hover{
+                    color:@main-color;
+                }
+            }
+        }
+    }
+}

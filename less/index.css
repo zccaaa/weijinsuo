@@ -1,0 +1,285 @@
+a {
+  color: #666;
+}
+a:hover {
+  color: #666;
+  text-decoration: none;
+}
+a:focus {
+  color: #666;
+  text-decoration: none;
+}
+/* 头部样式 */
+#header {
+  border-bottom: 1px solid #ccc;
+}
+#header .container .row > div {
+  line-height: 40px;
+  font-size: 12px;
+}
+#header .container .row > div ~ div {
+  border-left: 1px solid #ccc;
+}
+#header .container .row > div .btn-link {
+  color: #666;
+}
+#header .container .row > div .mobile-link {
+  display: block;
+  position: relative;
+}
+#header .container .row > div .mobile-link img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+  display: none;
+  z-index: 999;
+}
+#header .container .row > div .mobile-link:hover img {
+  display: block;
+}
+/* 导航条区域 */
+#nav {
+  background-color: #fff;
+  margin-bottom: 0;
+  top: 0;
+  width: 100%;
+  z-index: 998;
+  opacity: 0.8;
+}
+#nav .container .navbar-header .navbar-toggle {
+  margin-top: 23px;
+}
+#nav .container .navbar-header .navbar-brand {
+  line-height: 50px;
+  height: 80px;
+}
+#nav .container .navbar-header .navbar-brand .icon-icon {
+  font-size: 30px;
+  color: #e92322;
+}
+#nav .container .navbar-header .navbar-brand .icon-logo {
+  font-size: 28px;
+  color: #333;
+}
+#nav .container .navbar-collapse .navbar-nav li a {
+  line-height: 50px;
+}
+#nav .container .navbar-collapse .navbar-nav li a:hover {
+  border-bottom: 2px solid #e92322;
+}
+#nav .container .navbar-collapse .navbar-nav li.active a {
+  background-color: #fff;
+  border-bottom: 2px solid #e92322;
+}
+/* 轮播图区域的样式 */
+#slide {
+  /* 大图样式 */
+}
+#slide .small-image {
+  /* 使用图片标签设置宽度 高度自己缩放导致图片变小 */
+  width: 100%;
+}
+#slide .large-image {
+  /* 放大图的div容器 */
+  width: 100%;
+  height: 410px;
+  /* 使用背景图方式插入大图 */
+  /* 设置背景图居中 */
+  background-position: center center;
+}
+/* 特色介绍区域 */
+#feature {
+  padding: 40px 0;
+}
+#feature .container .row > div .media {
+  margin-bottom: 10px;
+}
+#feature .container .row > div .media a:hover {
+  color: #e92322;
+}
+/* 立即预约样式 */
+#booking {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+}
+#booking .text-danger {
+  color: #e92322;
+}
+/* 商品区域的样式 */
+#products {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+}
+#products .container .swiper-container {
+  width: 100%;
+}
+#products .container .swiper-container .swiper-slide {
+  width: auto;
+}
+#products .container .swiper-container .swiper-slide ul {
+  width: auto;
+}
+#products .container .nav-tabs li a {
+  font-size: 18px;
+  height: 48px;
+}
+#products .container .nav-tabs li a:hover {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+#products .container .nav-tabs li.active a {
+  background-color: #f5f5f5;
+  border: 1px solid transparent;
+  border-bottom: 2px solid #e92322;
+}
+#products .container .tab-content .tab-pane > .row > div .product {
+  margin-top: 20px;
+  background-color: #fff;
+  display: flex;
+}
+#products .container .tab-content .tab-pane > .row > div .product.active {
+  background-color: #e92322;
+  color: #fff;
+  position: relative;
+}
+#products .container .tab-content .tab-pane > .row > div .product.active::before {
+  content: "\e915";
+  font-family: 'itcast';
+  font-size: 30px;
+  position: absolute;
+  left: 0;
+  top: -6px;
+}
+#products .container .tab-content .tab-pane > .row > div .product .left {
+  flex: 1;
+  padding: 15px;
+  height: 160px;
+}
+#products .container .tab-content .tab-pane > .row > div .product .left h4 {
+  text-align: center;
+}
+#products .container .tab-content .tab-pane > .row > div .product .left .row div {
+  margin-bottom: 10px;
+}
+#products .container .tab-content .tab-pane > .row > div .product .left .row div p {
+  margin-bottom: 0;
+}
+#products .container .tab-content .tab-pane > .row > div .product .left .row div:nth-child(2n) {
+  text-align: right;
+}
+#products .container .tab-content .tab-pane > .row > div .product .right {
+  width: 100px;
+  height: 160px;
+  border: 1px dashed #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* 工具提示的样式 */
+}
+#products .container .tab-content .tab-pane > .row > div .product .right p {
+  text-align: center;
+}
+#products .container .tab-content .tab-pane > .row > div .product .right p strong {
+  font-size: 30px;
+}
+#products .container .tab-content .tab-pane > .row > div .product .right::before,
+#products .container .tab-content .tab-pane > .row > div .product .right::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  left: -8px;
+  background-color: #f5f5f5;
+}
+#products .container .tab-content .tab-pane > .row > div .product .right::before {
+  top: -8px;
+}
+#products .container .tab-content .tab-pane > .row > div .product .right::after {
+  bottom: -8px;
+}
+#products .container .tab-content .tab-pane > .row > div .product .right .tooltips {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+}
+#products .container .tab-content .tab-pane > .row > div .product .right .tooltips button:first-child {
+  color: #e92322;
+  border: 1px solid #e92322;
+  background-color: #fff;
+}
+#products .container .tab-content .tab-pane > .row > div .product .right .tooltips button:last-of-type {
+  color: sandybrown;
+  border: 1px solid sandybrown;
+  background-color: #fff;
+}
+/* 新闻区域样式 */
+#news {
+  padding: 40px 0;
+}
+#news .row > div h4 {
+  line-height: 40px;
+  text-align: center;
+  border-bottom: 1px dashed #ccc;
+  position: relative;
+}
+#news .row > div h4::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  right: -10px;
+  bottom: -5px;
+}
+#news .row > div .nav-tabs {
+  border-bottom: 0;
+}
+@media (max-width: 992px) {
+  #news .row > div .nav-tabs li {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+  #news .row > div .nav-tabs li a {
+    width: 60px;
+    margin: 0px auto;
+  }
+}
+#news .row > div .nav-tabs li a {
+  border-radius: 50%;
+  border: 0;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+#news .row > div .nav-tabs li a i {
+  font-size: 30px;
+}
+#news .row > div .nav-tabs li a:hover {
+  background-color: #e92322;
+}
+#news .row > div .nav-tabs li.active a {
+  background-color: #e92322;
+}
+#news .row > div .tab-content ul {
+  padding-left: 30px;
+}
+#news .row > div .tab-content ul li {
+  line-height: 40px;
+}
+/* 底部合作伙伴样式 */
+#footer .row div a {
+  display: block;
+}
+#footer .row div a i {
+  font-size: 60px;
+}
+#footer .row div a:hover {
+  color: #e92322;
+}
